@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
-
+import { Toaster } from "sonner";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/ui/theme-provider";
-import QueryProvider from "@/components/provider/query-provider";
+import QueryProvider from "./features/provider/react-query";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -50,6 +50,7 @@ export default function RootLayout({ children }: LayoutProps) {
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange>
+            <Toaster />
             {children}
           </ThemeProvider>
         </QueryProvider>
